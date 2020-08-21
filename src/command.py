@@ -14,3 +14,14 @@ class WB_Command():
         self.start_time  = pieces[3]
         self.type = pieces[4]
         self.raw = string
+
+    @staticmethod
+    def create_new_command(string):
+        pieces = string.split("&")
+
+        if len(pieces) < 4:
+            return None
+        else:
+            return WB_Command(
+                string
+            )

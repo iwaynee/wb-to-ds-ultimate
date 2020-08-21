@@ -25,7 +25,7 @@ def main():
     with open("input.txt", "r") as file:
         for line in file:
             # Step 4 - Split Commands to players
-            data.append_command(WB_Command(line))
+            data.append_command(WB_Command.create_new_command(line))
 
     # Step 5 - Generate ds ultimate links
     players = data.get_unique_player()

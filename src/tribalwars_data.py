@@ -1,6 +1,6 @@
 import requests
 import pandas as pd
-
+import os
 
 
 class DsData():
@@ -12,6 +12,13 @@ class DsData():
         self.player = None
 
         self.df = pd.DataFrame(columns=("player", "command"))
+
+        # Make data dir
+        try:
+            os.mkdir("data")
+        except OSError:
+            pass
+
 
     def download_village_data(self):
         # create URL
@@ -47,6 +54,8 @@ class DsData():
         Appends a new command to the df an links it to a certain player
         The data from WB will just give you village id so you have to look for the village to get the owner of the village
         """
+        if cmd == None:
+            return
 
         # Get origin id
         origin = cmd.origin

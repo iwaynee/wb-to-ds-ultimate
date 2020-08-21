@@ -136,6 +136,7 @@ input.txt
 output.txt
 village.txt
 player.txt
-
+__pycache__
+.idea
 
 
